@@ -39,8 +39,8 @@ lazy val bindings = project.in(file("bindings")).
     name := "scala-js-chrome",
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1"),
-    persistLauncher := false,
-    persistLauncher in Test := false,
+    scalaJSUseMainModuleInitializer := false,
+    scalaJSUseMainModuleInitializer in Test := false,
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "0.9.1"
     ),
@@ -72,7 +72,7 @@ lazy val plugin = project.in(file("sbt-plugin")).
     publishMavenStyle := false,
     bintrayRepository := "sbt-plugins",
     bintrayOrganization := None,
-    addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.14")
+    addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.16")
   ).
   enablePlugins(commonPlugins: _*)
 
@@ -84,8 +84,8 @@ lazy val monixInterop = project.in(file("interop/monix")).
     name := "scala-js-chrome-monix",
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1"),
-    persistLauncher := false,
-    persistLauncher in Test := false,
+    scalaJSUseMainModuleInitializer := false,
+    scalaJSUseMainModuleInitializer in Test := false,
     libraryDependencies ++= Seq(
       "io.monix" %%% "monix" % "2.1.2"
     ),
@@ -107,8 +107,8 @@ lazy val fs2Interop = project.in(file("interop/fs2")).
     name := "scala-js-chrome-fs2",
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.11.8", "2.12.1"),
-    persistLauncher := false,
-    persistLauncher in Test := false,
+    scalaJSUseMainModuleInitializer := false,
+    scalaJSUseMainModuleInitializer in Test := false,
     libraryDependencies ++= Seq(
       "co.fs2" %%% "fs2-core" % "0.9.2"
     ),

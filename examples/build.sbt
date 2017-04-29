@@ -22,8 +22,8 @@ lazy val exampleApp = project.in(file("app"))
       "-Xfatal-warnings",
       "-feature"
     ),
-    persistLauncher := true,
-    persistLauncher in Test := false,
+    scalaJSUseMainModuleInitializer := true,
+    scalaJSUseMainModuleInitializer in Test := false,
     relativeSourceMaps := true,
     skip in packageJSDependencies := false,
     chromeManifest := new AppManifest {
@@ -67,8 +67,8 @@ lazy val extension = project.in(file("extension"))
       "-Xfatal-warnings",
       "-feature"
     ),
-    persistLauncher := true,
-    persistLauncher in Test := false,
+    scalaJSUseMainModuleInitializer := true,
+    scalaJSUseMainModuleInitializer in Test := false,
     relativeSourceMaps := true,
     skip in packageJSDependencies := false,
     chromeManifest := new ExtensionManifest {
